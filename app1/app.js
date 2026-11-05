@@ -10,7 +10,7 @@ const camposPersona = [
   'digito', 'ocupacion', 'ingresos', 'deudas'
 ];
 
-document.getElementById('app').innerHTML = `
+const contenidoPersona = `
   <header class="encabezado">
     <p class="etiqueta">Sistema de evaluación</p>
     <h1>Tarjeta de crédito para persona natural</h1>
@@ -39,6 +39,28 @@ document.getElementById('app').innerHTML = `
   </div>
   <div id="tarjetas-disponibles" aria-live="polite"></div>
 `;
+
+if (window.location.pathname === '/') {
+  document.getElementById('app').innerHTML = `
+    <header class="encabezado">
+      <p class="etiqueta">Sistema de evaluación</p>
+      <h1>Solicita tu tarjeta de crédito</h1>
+      <p>Selecciona el tipo de solicitante para comenzar la evaluación.</p>
+    </header>
+    <div class="rejilla">
+      ${Tarjeta('Persona natural', `
+        <p>Evalúa tu solicitud con tus datos personales, ingresos y deudas.</p>
+        ${Boton('Continuar como persona', "window.location.href='/app1/'")}
+      `)}
+      ${Tarjeta('Empresa', `
+        <p>Evalúa tu empresa con su RUC, patrimonio, deuda y capacidad de pago.</p>
+        ${Boton('Continuar como empresa', "window.location.href='/app2/'")}
+      `)}
+    </div>
+  `;
+} else {
+  document.getElementById('app').innerHTML = contenidoPersona;
+}
 
 function valor(id) {
   return document.getElementById(id).value.trim();
