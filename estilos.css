@@ -1,0 +1,42 @@
+:root {
+    --azul: #1f5fbf; --rojo: #c0392b; --verde: #1d7a46;
+}
+body {
+     margin: 0; font-family: Arial, sans-serif; background: #f4f6fa;
+}
+.contenedor {
+     max-width: 800px; margin: 0 auto; padding: 16px;
+}
+.boton {
+     background: var(--azul);
+     color: #fff; border: 0;
+     border-radius: 8px;
+     padding: 10px 16px;
+     cursor: pointer;
+}
+
+
+.boton.peligro {
+     background: var(--rojo);
+}
+.tarjeta {
+     background: #fff;
+     border: 1px solid #d5dbe5;
+     border-radius: 8px;
+     padding: 16px;
+     margin-bottom: 16px;
+}
+.campo {
+    display: block;
+    margin-bottom: 12px;
+    font-weight: bold;
+    padding-right: 15px;
+ }
+.campo input {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    margin-top: 4px;
+    border: 1px solid #d5dbe5;
+    border-radius: 8px;
+}
